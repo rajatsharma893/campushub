@@ -4,6 +4,10 @@ import Layout from './components/Layout'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Students from './pages/Students'
+import Faculty from './pages/Faculty'
+import Courses from './pages/Courses'
+import Attendance from './pages/Attendance'
+import Marks from './pages/Marks'
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -26,6 +30,10 @@ export default function App() {
           >
             <Route index element={<Dashboard />} />
             <Route path="students" element={<Students />} />
+            <Route path="faculty" element={<Faculty />} />
+            <Route path="courses" element={<Courses />} />
+            <Route path="attendance" element={<Attendance />} />
+            <Route path="marks" element={<Marks />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

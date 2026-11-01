@@ -4,6 +4,10 @@ import { useAuth } from '../context/AuthContext'
 const links = [
   { to: '/', label: 'Dashboard', roles: ['ADMIN', 'FACULTY', 'STUDENT'], end: true },
   { to: '/students', label: 'Students', roles: ['ADMIN', 'FACULTY'] },
+    { to: '/faculty', label: 'Faculty', roles: ['ADMIN', 'FACULTY'] },
+  { to: '/courses', label: 'Courses', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
+    { to: '/attendance', label: 'Attendance', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
+  { to: '/marks', label: 'Marks', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
 ]
 
 export default function Layout() {
