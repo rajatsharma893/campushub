@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import Logo from '../components/Logo'
 
 export default function Login() {
   const { user, login } = useAuth()
@@ -27,39 +28,60 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white p-8 rounded-xl shadow">
-        <h1 className="text-2xl font-bold text-center mb-1">CampusHub</h1>
-        <p className="text-gray-500 text-center mb-6">Sign in to continue</p>
+    <div className="min-h-screen flex">
+      <div className="hidden md:flex w-1/2 bg-gradient-to-br from-brand-950 via-brand-900 to-accent-500 text-white flex-col justify-between p-12">
+        <div className="flex items-center gap-3">
+          <Logo size={44} />
+          <span className="text-2xl font-bold tracking-tight">
+            Campus<span className="text-accent-400">Hub</span>
+          </span>
+        </div>
+        <div>
+          <h2 className="text-4xl font-bold leading-tight mb-4">Everything your campus needs, in one hub.</h2>
+          <p className="text-indigo-200 max-w-md">
+            Students, faculty, attendance, marks and notices, all managed from one simple place.
+          </p>
+        </div>
+        <p className="text-sm text-indigo-200">Created by Rajat Sharma</p>
+      </div>
 
-        {error && <div className="bg-red-100 text-red-700 text-sm p-2 rounded mb-4">{error}</div>}
+      <div className="flex-1 flex items-center justify-center bg-gray-100 px-4">
+        <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white p-8 rounded-2xl shadow-lg">
+          <div className="md:hidden flex justify-center mb-4">
+            <Logo size={48} />
+          </div>
+          <h1 className="text-2xl font-bold text-center mb-1">Welcome back</h1>
+          <p className="text-gray-500 text-center mb-6">Sign in to CampusHub</p>
 
-        <label className="block text-sm font-medium mb-1">Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="w-full border rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+          {error && <div className="bg-red-100 text-red-700 text-sm p-2 rounded mb-4">{error}</div>}
 
-        <label className="block text-sm font-medium mb-1">Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="w-full border rounded px-3 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+          <label className="block text-sm font-medium mb-1">Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full border rounded-lg px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-brand-500"
+          />
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 disabled:opacity-50"
-        >
-          {loading ? 'Signing in...' : 'Sign in'}
-        </button>
-      </form>
+          <label className="block text-sm font-medium mb-1">Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="w-full border rounded-lg px-3 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-brand-500"
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-brand-600 text-white py-2.5 rounded-lg font-medium hover:bg-brand-700 disabled:opacity-50"
+          >
+            {loading ? 'Signing in...' : 'Sign in'}
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
