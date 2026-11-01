@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white p-8 rounded-xl shadow">
-        <h1 className="text-2xl font-bold text-center mb-1">College Portal</h1>
+        <h1 className="text-2xl font-bold text-center mb-1">CampusHub</h1>
         <p className="text-gray-500 text-center mb-6">Sign in to continue</p>
 
         {error && <div className="bg-red-100 text-red-700 text-sm p-2 rounded mb-4">{error}</div>}

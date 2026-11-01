@@ -8,6 +8,7 @@ import Faculty from './pages/Faculty'
 import Courses from './pages/Courses'
 import Attendance from './pages/Attendance'
 import Marks from './pages/Marks'
+import Notices from './pages/Notices'
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="courses" element={<Courses />} />
             <Route path="attendance" element={<Attendance />} />
             <Route path="marks" element={<Marks />} />
+            <Route path="notices" element={<Notices />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

@@ -8,6 +8,7 @@ const links = [
   { to: '/courses', label: 'Courses', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
   { to: '/attendance', label: 'Attendance', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
   { to: '/marks', label: 'Marks', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
+  { to: '/notices', label: 'Notices', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
 ]
 
 export default function Layout() {
@@ -16,7 +17,7 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex bg-gray-100">
       <aside className="w-56 bg-slate-900 text-white flex flex-col">
-        <div className="px-5 py-4 text-lg font-bold border-b border-slate-700">College Portal</div>
+        <div className="px-5 py-4 text-lg font-bold border-b border-slate-700">CampusHub</div>
         <nav className="flex-1 p-3 space-y-1">
           {links
             .filter((l) => l.roles.includes(user.role))
@@ -33,6 +34,7 @@ export default function Layout() {
               </NavLink>
             ))}
         </nav>
+        <div className="px-5 py-3 text-xs text-slate-400 border-t border-slate-700">Created by Rajat Sharma</div>
       </aside>
 
       <div className="flex-1 flex flex-col">
