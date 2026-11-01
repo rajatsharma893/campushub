@@ -110,7 +110,6 @@ function StaffView() {
 
   const handleSave = async () => {
     setMessage({ type: '', text: '' })
-    // Sirf wahi rows jinke dono marks bhare hain
     const records = students
       .filter((s) => values[s.studentId].internal !== '' && values[s.studentId].external !== '')
       .map((s) => ({
