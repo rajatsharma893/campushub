@@ -55,9 +55,13 @@ export default function Layout() {
             Logout
           </button>
         </header>
-        <main className="p-6">
+        <main className="p-6 flex-1">
           <Outlet />
         </main>
+        <footer data-credit className="border-t border-neutral-200 bg-white px-6 py-3 text-xs text-neutral-500 text-center">
+          &copy; {new Date().getFullYear()} CampusHub. Designed and built by{' '}
+          <span className="font-semibold text-neutral-900">Rajat Sharma</span>
+        </footer>
       </div>
     </div>
   )

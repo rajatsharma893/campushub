@@ -81,6 +81,9 @@ export default function Login() {
           >
             {loading ? 'Signing in...' : 'Sign in'}
           </button>
+        <p data-credit className="text-center text-xs text-gray-500 mt-6">
+            Created by <span className="font-semibold text-gray-800">Rajat Sharma</span>
+          </p>
         </form>
       </div>
     </div>
