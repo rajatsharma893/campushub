@@ -146,7 +146,7 @@ export default function Students() {
                   <td className="px-4 py-3">{s.semester}</td>
                   {isAdmin && (
                     <td className="px-4 py-3 space-x-3">
-                      <button onClick={() => openEdit(s)} className="text-blue-600 hover:underline">Edit</button>
+                      <button onClick={() => openEdit(s)} className="text-neutral-900 font-medium hover:underline">Edit</button>
                       <button onClick={() => handleDelete(s)} className="text-red-600 hover:underline">Delete</button>
                     </td>
                   )}

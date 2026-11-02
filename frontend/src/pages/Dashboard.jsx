@@ -31,10 +31,10 @@ export default function Dashboard() {
 
   const cards = stats
     ? [
-        { label: 'Students', value: stats.students, color: 'bg-blue-600' },
-        { label: 'Faculty', value: stats.faculty, color: 'bg-green-600' },
-        { label: 'Courses', value: stats.courses, color: 'bg-purple-600' },
-        { label: 'Departments', value: stats.departments, color: 'bg-orange-500' },
+        { label: 'Students', value: stats.students, color: 'bg-red-600' },
+        { label: 'Faculty', value: stats.faculty, color: 'bg-black' },
+        { label: 'Courses', value: stats.courses, color: 'bg-neutral-700' },
+        { label: 'Departments', value: stats.departments, color: 'bg-neutral-500' },
       ]
     : []
 
@@ -54,7 +54,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      <div className="bg-white rounded-xl shadow p-4">
+      <div className="bg-white rounded-xl shadow p-4 border-t-4 border-red-600">
         <h3 className="font-semibold mb-3">Latest Notices</h3>
         {notices.length === 0 && <p className="text-gray-500 text-sm">No notices yet.</p>}
         {notices.map((n) => (

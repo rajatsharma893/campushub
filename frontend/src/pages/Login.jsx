@@ -29,26 +29,27 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex">
-      <div className="hidden md:flex w-1/2 bg-gradient-to-br from-brand-950 via-brand-900 to-accent-500 text-white flex-col justify-between p-12">
+      <div className="hidden md:flex w-1/2 bg-black text-white flex-col justify-between p-12 border-r-4 border-red-600">
         <div className="flex items-center gap-3">
-          <Logo size={44} />
+          <Logo size={52} light />
           <span className="text-2xl font-bold tracking-tight">
-            Campus<span className="text-accent-400">Hub</span>
+            Campus<span className="text-red-500">Hub</span>
           </span>
         </div>
         <div>
+          <div className="w-14 h-1 bg-red-600 mb-6" />
           <h2 className="text-4xl font-bold leading-tight mb-4">Everything your campus needs, in one hub.</h2>
-          <p className="text-indigo-200 max-w-md">
+          <p className="text-neutral-400 max-w-md">
             Students, faculty, attendance, marks and notices, all managed from one simple place.
           </p>
         </div>
-        <p className="text-sm text-indigo-200">Created by Rajat Sharma</p>
+        <p className="text-sm text-neutral-500">Created by Rajat Sharma</p>
       </div>
 
       <div className="flex-1 flex items-center justify-center bg-gray-100 px-4">
-        <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white p-8 rounded-2xl shadow-lg">
+        <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white p-8 rounded-2xl shadow-lg border-t-4 border-red-600">
           <div className="md:hidden flex justify-center mb-4">
-            <Logo size={48} />
+            <Logo size={56} />
           </div>
           <h1 className="text-2xl font-bold text-center mb-1">Welcome back</h1>
           <p className="text-gray-500 text-center mb-6">Sign in to CampusHub</p>
@@ -61,7 +62,7 @@ export default function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full border rounded-lg px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-brand-500"
+            className="w-full border rounded-lg px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-red-500"
           />
 
           <label className="block text-sm font-medium mb-1">Password</label>
@@ -70,13 +71,13 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full border rounded-lg px-3 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-brand-500"
+            className="w-full border rounded-lg px-3 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-red-500"
           />
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-brand-600 text-white py-2.5 rounded-lg font-medium hover:bg-brand-700 disabled:opacity-50"
+            className="w-full bg-red-600 text-white py-2.5 rounded-lg font-medium hover:bg-red-700 disabled:opacity-50"
           >
             {loading ? 'Signing in...' : 'Sign in'}
           </button>

@@ -17,11 +17,11 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex bg-gray-100">
-      <aside className="w-60 bg-brand-950 text-white flex flex-col">
-        <div className="px-5 py-5 flex items-center gap-3 border-b border-white/10">
-          <Logo size={36} />
+      <aside className="w-60 bg-black text-white flex flex-col">
+        <div className="px-5 py-5 flex items-center gap-3 border-b border-neutral-800">
+          <Logo size={38} light />
           <span className="text-xl font-bold tracking-tight">
-            Campus<span className="text-accent-400">Hub</span>
+            Campus<span className="text-red-500">Hub</span>
           </span>
         </div>
         <nav className="flex-1 p-3 space-y-1">
@@ -34,7 +34,7 @@ export default function Layout() {
                 end={l.end}
                 className={({ isActive }) =>
                   `block px-3 py-2 rounded-lg text-sm font-medium ${
-                    isActive ? 'bg-brand-600 text-white' : 'text-indigo-200 hover:bg-brand-900'
+                    isActive ? 'bg-red-600 text-white' : 'text-neutral-400 hover:bg-neutral-900 hover:text-white'
                   }`
                 }
               >
@@ -42,15 +42,16 @@ export default function Layout() {
               </NavLink>
             ))}
         </nav>
-        <div className="px-5 py-3 text-xs text-indigo-300 border-t border-white/10">Created by Rajat Sharma</div>
+        <div className="px-5 py-3 text-xs text-neutral-500 border-t border-neutral-800">Created by Rajat Sharma</div>
       </aside>
 
       <div className="flex-1 flex flex-col">
-        <header className="bg-white shadow-sm px-6 py-3 flex justify-end items-center gap-4">
-          <span className="text-sm text-gray-600">
-            {user.name} <span className="ml-1 px-2 py-0.5 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold">{user.role}</span>
+        <header className="bg-white border-b-2 border-red-600 px-6 py-3 flex justify-end items-center gap-4">
+          <span className="text-sm text-neutral-700">
+            {user.name}{' '}
+            <span className="ml-1 px-2 py-0.5 rounded-full bg-black text-white text-xs font-semibold">{user.role}</span>
           </span>
-          <button onClick={logout} className="text-sm bg-brand-950 text-white px-3 py-1.5 rounded-lg hover:bg-brand-900">
+          <button onClick={logout} className="text-sm border border-red-600 text-red-600 px-3 py-1.5 rounded-lg hover:bg-red-600 hover:text-white">
             Logout
           </button>
         </header>
