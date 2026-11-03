@@ -9,6 +9,8 @@ import Courses from './pages/Courses'
 import Attendance from './pages/Attendance'
 import Marks from './pages/Marks'
 import Notices from './pages/Notices'
+import Register from './pages/Register'
+import ChangePassword from './pages/ChangePassword'
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -21,6 +23,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route
             path="/"
             element={
@@ -36,6 +39,7 @@ export default function App() {
             <Route path="attendance" element={<Attendance />} />
             <Route path="marks" element={<Marks />} />
             <Route path="notices" element={<Notices />} />
+            <Route path="change-password" element={<ChangePassword />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

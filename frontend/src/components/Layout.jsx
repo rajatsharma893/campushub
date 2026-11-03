@@ -10,6 +10,7 @@ const links = [
   { to: '/attendance', label: 'Attendance', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
   { to: '/marks', label: 'Marks', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
   { to: '/notices', label: 'Notices', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
+  { to: '/change-password', label: 'Change Password', roles: ['ADMIN', 'FACULTY', 'STUDENT'] },
 ]
 
 export default function Layout() {

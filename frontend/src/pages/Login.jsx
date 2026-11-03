@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import Logo from '../components/Logo'
 
@@ -81,6 +81,13 @@ export default function Login() {
           >
             {loading ? 'Signing in...' : 'Sign in'}
           </button>
+
+          <p className="text-center text-sm text-gray-600 mt-4">
+            New student?{' '}
+            <Link to="/register" className="font-semibold text-red-600 hover:underline">
+              Create an account
+            </Link>
+          </p>
         <p data-credit className="text-center text-xs text-gray-500 mt-6">
             Created by <span className="font-semibold text-gray-800">Rajat Sharma</span>
           </p>
