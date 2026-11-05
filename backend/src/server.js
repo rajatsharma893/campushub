@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
+const cookieParser = require('cookie-parser');
 
 const { apiLimiter, loginLimiter, registerLimiter, passwordLimiter } = require('./middleware/rateLimiters');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
@@ -27,8 +28,8 @@ if (!process.env.DATABASE_URL) {
 
 const app = express();
 
-// Render ek proxy ke peeche chalta hai, isse asli user ka IP milta hai (rate limit ke liye zaroori)
-app.set('trust proxy', 1);
+// Render aur Vercel proxy ke peeche asli user ka IP nikalne ke liye (rate limit ke kaam aata hai)
+app.set('trust proxy', parseInt(process.env.TRUST_PROXY_HOPS || '2', 10));
 
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 
@@ -40,6 +41,7 @@ const allowedOrigins = (process.env.FRONTEND_URLS || 'https://campushub-erp.verc
 
 app.use(
   cors({
+    credentials: true,
     origin(origin, callback) {
       // origin nahi hota jab Thunder Client ya server-to-server request ho
       if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
@@ -49,6 +51,7 @@ app.use(
 );
 
 app.use(express.json({ limit: '100kb' }));
+app.use(cookieParser());
 
 app.get('/', (req, res) => res.json({ message: 'CampusHub API is running' }));
 

@@ -43,10 +43,9 @@ Created by **Rajat Sharma**.
 
 ## Demo Logins (after seeding)
 
-- Admin: `admin@college.com`
 - Faculty: `faculty1@college.com`
 - Student: `student1@college.com`
-- Password for all demo accounts: `password123`
+- Password for the demo faculty and student accounts: `password123`
 
 These are demo credentials only. Change them before any real deployment.
 

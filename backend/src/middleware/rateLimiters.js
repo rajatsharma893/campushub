@@ -10,12 +10,13 @@ const make = (windowMinutes, limit, message, options = {}) =>
     ...options,
   });
 
-// Poori API par: ek IP se 15 minute mein 600 requests
-const apiLimiter = make(15, 600, 'Too many requests. Please slow down and try again shortly.');
+// Poori API par: ek IP se 15 minute mein 1000 requests
+const apiLimiter = make(15, 1000, 'Too many requests. Please slow down and try again shortly.');
 
-// Login: 15 minute mein 10 galat koshish (sahi login count nahi hote)
+// Login: ek email par 15 minute mein 10 galat koshish (sahi login count nahi hote)
 const loginLimiter = make(15, 10, 'Too many login attempts. Please try again in 15 minutes.', {
   skipSuccessfulRequests: true,
+  keyGenerator: (req) => String((req.body && req.body.email) || 'unknown').toLowerCase().slice(0, 120),
 });
 
 // Sign up: ek ghante mein 5 naye account ek IP se
